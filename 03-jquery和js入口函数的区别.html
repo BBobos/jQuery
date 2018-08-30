@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./js/jquery-1.11.3.js"></script>
+	<title>03</title>
+	<script type="text/javascript">
+		/*window.onload = function (){
+			//1、通过原生的js入口函数可以拿到DOM元素
+			var img = document.getElementsByTagName("img")[0];
+			console.log(img);
+			//1、通过原生的js入口函数可以拿到DOM元素的高宽度
+			var width = window.getComputedStyle(img).width;
+			//var height = window.getComputedStyle(img).height;
+			console.log("onload",width);
+			//console.log(height);
+
+		}
+		*/
+		/*
+		*
+		*1、原生js和jquery入口函数的加载模式不同
+		*原生js会等到DOM元素加载完毕，并且图片也加载完毕才会执行
+		*jQery会等到DOM元素加载完毕，但不会等到图片加载完毕就会执行
+		*
+		*/
+
+		/*$(document).ready(function (argument) {
+			//1、通过jquery入口函数可以拿到DOM元素
+			var x = $("img");
+			//console.log($img);
+			//1、通过jquery入口函数不可以拿到DOM元素的宽高
+			var width1 = x.width();
+			//var height1 = x.height();
+			console.log("ready",width1);
+			//console.log(height1);
+		})
+		*/
+
+		/*
+		*1、原生的JS如果编写了多个入口函数，后面编写的会覆盖前面编写的
+		*2、jQuery中编写多个入口函数，后面编写的不会覆盖前面编写的
+		*/
+
+		/*window.onload = function () {
+			alert("hello world1");
+		}
+		window.onload = function () {
+			alert("hello world2");
+		}*/
+		$(document).ready(function () {
+			alert("hello world1");
+		});
+		$(document).ready(function () {
+			alert("hello world2");
+		});
+	</script>
+</head>
+<body>
+<img src="https://img.alicdn.com/simba/img/TB1fUQpb9tYBeNjSspaSuuOOFXa.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>04</title>
+	<script type="text/javascript" src="./js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="./js/test.js"></script>
+	
+
+	<script type="text/javascript">
+		//1、释放$的使用权
+		//注意点：释放操作必须在编写其他jQuery代码之前编写
+		//		 释放之后不能再使用$，改为使用jQuery
+		//jQuery.noConflict();
+		//2、自定义一个访问符号
+		var zz = jQuery.noConflict();
+		zz(function () {
+			alert("hello world");
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

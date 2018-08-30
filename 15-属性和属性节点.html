@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15-属性和属性节点</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        $(function () {
+            /*
+            * 1、什么是属性？
+              对象身上保存的变量就是属性
+            * 2、如何操作属性？
+              对象.属性名称 = 值；
+              对象.属性名称；
+
+              对象[“属性名称”] = 值；
+              对象[“属性名称”]；
+            * 3、什么是属性节点？
+            * 4、如何操作属性节点？
+            * 5、属性和属性节点有什么区别？
+            * */
+            function Person() {
+
+            }
+            var p = new Person();
+            //p.name = "Inj";
+            p["name"] = "ss";
+            //console.log(p.name);
+            console.log(p["name"]);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

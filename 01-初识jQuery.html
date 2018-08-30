@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>01</title>
+	<style type="text/css">
+		body{margin: 0;padding: 0;}
+		div{width: 100px;height: 100px;border: 1px solid red;}
+	</style>
+	<script type="text/javascript" src="./js/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		window.onload = function (qx) {
+			/*原生js获取dom*/
+			var d1 = document.getElementsByTagName("div")[0];
+			var d2 = document.getElementsByClassName("box2")[0];
+			var d3 = document.getElementById("box3");
+			/*console.log(d1);
+			console.log(d2);
+			console.log(d3);*/
+			/*利用原生js修改背景色*/
+			/*d1.style.backgroundColor="#000";
+			d2.style.backgroundColor="red";
+			d3.style.backgroundColor="blue";*/
+		}
+		$(function(){
+			var x1 = $("div");
+			var x2 = $(".box2");
+			var x3 = $("#box3");
+			x1.css({
+				backgroundColor: "red"
+			})
+			x2.css({
+				background: "blue"
+			})
+			x3.css({
+				background: "yellow"
+			})
+			console.log(x3);
+			console.log(x2);
+			console.log(x1);
+		})
+	</script>
+</head>
+
+
+<body>
+<div></div>
+<div class="box2"></div>
+<div id="box3"></div>
+</body>
+</html>
