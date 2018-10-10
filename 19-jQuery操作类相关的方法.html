@@ -25,14 +25,60 @@
             2.removeClass([class|fn])
             3.toggleClass(class|fn[,sw])
             */
-
+            var btn1 = document.getElementsByTagName("button")[0];
+            var btn2 = document.getElementsByTagName("button")[1];
+            var btn3 = document.getElementsByTagName("button")[2];
+            btn1.onclick = function () {
+                //给最后一个li加上不同的class
+                $("ul li:last").addClass(function () {
+                    return "item-" + $(this).index();
+                })
+            }
+            btn2.onclick = function(){
+                //删除最后一个元素上与前面重复的class
+                $("ul li:eq(2)").removeClass(function () {
+                    return $(this).prev().attr("class");
+                })
+            }
+            btn3.onclick = function () {
+                $("ul li:eq(0)").toggleClass("highlight");
+            }
         })
+        $(function () {
+            $("#btn4").click(function () {
+                //alert("1");
+                var value1 = $("p:eq(1)").html();
+                /*var x =
+                var y = $("p:eq(1)").text("测试2");
+                        $("p:eq(2)").text("测试3");*/
+                if(value1 == "测试2"){
+                    $("p:eq(1)").text("hello");
+                    $("p:eq(2)").text("hello world!");
+                };
+                if(value1 != "测试2"){
+                    $("p:eq(1)").text("测试2");
+                    $("p:eq(2)").text("策士3");
+                };
+            })
+        });
     </script>
 </head>
 <body>
 <button>添加类</button>
 <button>删除类</button>
 <button>切换类</button>
-<div>测试</div>
+
+<ul>
+    <li class="class1">hello1</li>
+    <li class="class2">hello2</li>
+    <li class="class1 class2">hello3</li>
+    <li class="class1">hello4</li>
+</ul>
+<button id="btn4">改变文本值</button>
+<p>测试12131421324测试test</p>
+<p>测试2</p>
+<p>测试3</p>
+<p>测试4</p>
+<p>测试5</p>
 </body>
 </html>
