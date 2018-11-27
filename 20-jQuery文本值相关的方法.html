@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script>
+        $(function () {
+            /*
+            1.html([val|fn])
+            和原生中innerHTML一模一样
+            2.text([val|fn])
+            和原生中innerText一模一样
+            3.val([val|fn|arr])
+            */
+            var btns = document.getElementsByTagName("button");
+            btns[0].onclick = function () {
+                $("div").html("<p>我是段落<span>我是span</span></p>")
+            }
+            btns[1].onclick = function () {
+                // var sel1 = $("div").html();
+                // alert(sel1);
+                console.log($("div").html());
+            }
+            btns[2].onclick = function () {
+                $("div").text("<p>我是段落<span>我是span</span></p>")
+            }
+            btns[3].onclick = function () {
+                console.log($("div").text());
+            }
+            btns[4].onclick = function () {
+                $("input").val("cececeshi")
+            }
+            btns[5].onclick = function () {
+                console.log($("input").val());
+            }
+            // btns[6].onclick = function () {
+            //     console.log($("li:eq(2)").val());
+            // }
+
+            // btns[7].onclick = function () {
+            //     $("li:eq(2)").val("ceshi")
+            // }
+        })
+    </script>
+</head>
+<body>
+<button>设置html</button>
+<button>获取html</button>
+<button>设置text</button>
+<button>获取text</button>
+<button>设置value</button>
+<button>获取value</button>
+<button>获取li中的value</button>
+<button>更改li中的value</button>
+<div></div>
+<input type="text">
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+</ul>
+</body>
+</html>
